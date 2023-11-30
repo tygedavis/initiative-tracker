@@ -1,8 +1,20 @@
 Note: This is a placeholder while we wait for wireframes.
 # Dungeons & Dragons Initiative Tracker Design Document
 ## 1. Introduction
-Purpose: Explain the purpose of the document and the web app.
-Scope: Define the scope of the web app, including features and functionality.
+Purpose: The primary objective of this application is to furnish participants engaged in a Dungeons and Dragons (D&D) campaign with a visual mechanism to discern the commencement of their turn within the gameplay. The overarching intent is to enhance the efficiency of turn-based interactions, particularly in scenarios involving multiple characters. Through the implementation of this feature, the application aims to expedite the pace of gameplay, thereby optimizing the overall gaming experience for participants.
+
+Scope: 
+
+1. **Turn-Based Facilitation**: The primary function of the application is to seamlessly guide players through the turn-based structure inherent in D&D gameplay.
+This includes a visual representation to clearly demarcate when a player's turn commences.
+
+2. **Multifaceted Character Management**: The application is tailored to accommodate scenarios involving multiple characters within a campaign.
+It is engineered to address the intricacies of managing and expediting turns for each character efficiently.
+
+3. **Enhanced Gameplay Efficiency**: A central objective is to significantly augment the speed and fluidity of turn-based play.
+By mitigating potential delays associated with turn transitions, the application aims to optimize overall gameplay efficiency.
+
+4. **Intuitive User Interface**: The scope involves the implementation of an intuitive and user-friendly interface, ensuring accessibility for players of varying experience levels with D&D.
 
 ## 2. System Architecture
 ### 2.1 Front End
@@ -72,14 +84,7 @@ Scope: Define the scope of the web app, including features and functionality.
  - Discuss the scalability of the backend architecture.
 
 ## 4. Security Considerations
-#### Data Encryption:
- - Explain how sensitive data is encrypted during transmission.
-
-#### Authentication and Authorization:
- - Detail how user authentication and authorization are handled.
-
-#### Input Validation:
- - Discuss measures in place to validate and sanitize user inputs.
+At this time, there are no serious security considerations.
 
 ## 5. Testing
 #### Unit Testing:
@@ -90,12 +95,9 @@ Scope: Define the scope of the web app, including features and functionality.
 
 ## 6. Deployment
 #### Hosting Environment:
- - Specify the hosting environment (e.g., AWS, Heroku).
- - Describe the deployment process.
+Hosting for this app will be locally. There will be instructions in the README on how to run the app.
 
 ## 7. Future Enhancements
-#### Scalability Improvements:
- - Discuss potential improvements for handling a larger number of users.
 
 #### Additional Features:
  - List features that could be added in future iterations.
