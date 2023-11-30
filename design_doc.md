@@ -1,10 +1,11 @@
 Note: This is a placeholder while we wait for wireframes.
 # Dungeons & Dragons Initiative Tracker Design Document
 ## 1. Introduction
-Purpose: The primary objective of this application is to furnish participants engaged in a Dungeons and Dragons (D&D) campaign with a visual mechanism to discern the commencement of their turn within the gameplay. The overarching intent is to enhance the efficiency of turn-based interactions, particularly in scenarios involving multiple characters. Through the implementation of this feature, the application aims to expedite the pace of gameplay, thereby optimizing the overall gaming experience for participants.
+**Purpose**: 
 
-Scope: 
+The primary objective of this application is to furnish participants engaged in a Dungeons and Dragons (D&D) campaign with a visual mechanism to discern the commencement of their turn within the gameplay. The overarching intent is to enhance the efficiency of turn-based interactions, particularly in scenarios involving multiple characters. Through the implementation of this feature, the application aims to expedite the pace of gameplay, thereby optimizing the overall gaming experience for participants.
 
+**Scope**: 
 1. **Turn-Based Facilitation**: The primary function of the application is to seamlessly guide players through the turn-based structure inherent in D&D gameplay.
 This includes a visual representation to clearly demarcate when a player's turn commences.
 
