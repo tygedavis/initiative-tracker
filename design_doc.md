@@ -76,13 +76,104 @@ By mitigating potential delays associated with turn transitions, the application
  - Explain how the backend calculates and maintains the initiative order.
 
 #### Database Operations:
- - Describe CRUD operations for managing player and turn data.
+characters Schema
+| Column         | Type   | Constraints                   |
+|----------------|--------|-------------------------------|
+| ID             | int    | Primary Key, Auto-increment   |
+| PHOTO          | string |                               |
+| NAME           | string | Not Null                      |
+| HEALTH_MAX     | int    | Not Null                      |
+| TYPE           | string | Not Null                      |
+
+**GET** `/characters` - Get's a list of all characters
+- Acceptable Query Params
+  - type={type} - Retrieves all characters with the specified `type`.
+
+**GET** `/characters/{character_id}` - Get's a character with the specified `character_id`
+
+**POST** `/characters` - Create a character
+ - POST Body
+   - NAME - Required
+   - HEALTH_MAX - Required
+   - TYPE - Required
+   - PHOTO - Optional
+  
+**PUT** `/characters/{character_id}` - Edit a character with the specified `character_id`
+ - PUT Body (Pass any in with their new value to be updated)
+   - NAME
+   - HEALTH_MAX
+   - TYPE
+   - PHOTO
+
+**DELETE** `/characters/{character_id}` - Delete a character with the specified `character_id`
+
+---
+
+### Campaign
+campaign schema
+| Column         | Type   | Constraints                   |
+|----------------|--------|-------------------------------|
+| ID             | int    | Primary Key, Auto-increment   |
+| NAME           | string | Not Null                      |
+
+**GET** `/campaign` - Retrieve a list of campaigns
+
+**GET** `/campaign/{campaign_id}` - Retrieve a campaign with the specified `capaign_id`
+
+**POST** `/campaign` - Create a campaign
+- POST Body
+  - NAME - Required
+ 
+**PUT** `/campaign/{campaign_id}` - Edit a campaign with the specified `capaign_id`
+- PUT Body
+  - NAME - Required 
+
+**DELETE** `/campaign/{campaign_id}` - Delete a campaign with the specified `capaign_id`
+
+---
+
+### Round
+round schema
+| Column         | Type   | Constraints                   |
+|----------------|--------|-------------------------------|
+| ID             | int    | Primary Key, Auto-increment   |
+| CAMPAIGN ID    | int    | Not Null (FK to Campaign)     |
+
+---
+
+### Additional tables
+character-round schema
+ - This table will create a character to round relationship.
+ - All round specific data should go in this table
+
+| Column        | Type  | Constraints                                     |
+|---------------|-------|-------------------------------------------------|
+| character_id  | INT   | FOREIGN KEY (character_id) REFERENCES Character(character_id) |
+| round_id       | INT   | FOREIGN KEY (round_id) REFERENCES Round(round_id) |
+| PRIMARY KEY    |       | (character_id, round_id)                       |
+| initiative    | INT   | Not Null                                        |
+
+// Still need to add CRUD operations
+
+---
+character-campaign schema
+ - This table will create a character to campaign relationship
+ - All campaign specific data should go in this table
+
+| Column        | Type  | Constraints                                     |
+|---------------|-------|-------------------------------------------------|
+| character_id  | INT   | FOREIGN KEY (character_id) REFERENCES Character(character_id) |
+| campaign_id       | INT   | FOREIGN KEY (campaign_id) REFERENCES Campaign(campaign_id) |
+| PRIMARY KEY    |       | (character_id, campaign_id)                       |
+| CURRENT_HEALTH   | INT  |                                               |
+
+// Still need to add CRUD operations
 
 #### Real-time Updates:
  - Outline how real-time updates are achieved, especially for turn changes.
 
 #### Scalability:
- - Discuss the scalability of the backend architecture.
+ - Considering that, at the moment, this app will be built to run locally for a party of no more than 20 people, we aren't concerned about scalability and is something that will not be addressed for MVP.
 
 ## 4. Security Considerations
 At this time, there are no serious security considerations.
