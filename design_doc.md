@@ -157,7 +157,7 @@ character-round schema
 
 **POST** `/round/{round_id}/characters` - Add a character(s) to a round
 - POST Body
-    - [{ character_id: required, initiative: required}] 
+    - [{ character_id: required, initiative: required}]
 
 **GET** `/round/{round_id}/characters/{character_id}` - Retrieve a specified character in a specified round
 
