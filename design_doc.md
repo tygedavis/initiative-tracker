@@ -153,7 +153,19 @@ character-round schema
 | PRIMARY KEY    |       | (character_id, round_id)                       |
 | initiative    | INT   | Not Null                                        |
 
-// Still need to add CRUD operations
+**GET** `/round/{round_id}/characters` - Retrieve all characters in a specified round
+
+**POST** `/round/{round_id}/characters` - Add a character(s) to a round
+- POST Body
+    - [{ character_id: required, initiative: required}] 
+
+**GET** `/round/{round_id}/characters/{character_id}` - Retrieve a specified character in a specified round
+
+**PUT** `/round/{round_id}/characters/{character_id}` - Edit character information within a specified round
+- PUT Body
+    - INITIATIVE - Required
+
+**DELETE** `/round/{round_id}/characters/{character_id}` - Remove a character from a round
 
 ---
 character-campaign schema
@@ -167,7 +179,19 @@ character-campaign schema
 | PRIMARY KEY    |       | (character_id, campaign_id)                       |
 | CURRENT_HEALTH   | INT  |                                               |
 
-// Still need to add CRUD operations
+**GET** `/campaign/{campaign_id}/characters` - Retrieve all characters in a specified campaign
+
+**POST** `campaign/{campaign_id}/characters` - Add characters to a specified campaign
+- POST Body
+    - [{ character_id: required, current_health: optional }]
+
+**GET** `/campaign/{campaign_id}/characters/{character_id}` - Retrieve a specified characters campaign stats
+
+**PUT** `/campaign/{campaign_id}/characters/{character_id}` - Edit a specified characters campaign stats
+ - PUT Body
+    - CURRENT_HEALTH - Required
+
+**DELETE** `/campaign/{campaign_id/characters/{character_id}` - Remove a character from a campaign
 
 #### Real-time Updates:
  - Outline how real-time updates are achieved, especially for turn changes.
