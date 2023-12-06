@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize({
 	dialect: 'sqlite',
-	storage: '~/.initiative/campaign.db'
+	storage: './db/campaign.db'
 });
 
 const Campaign = sequelize.define('Campaign', {
