@@ -2,14 +2,20 @@
 
 # dependencies
 /client/node_modules
+/api/node_modules
 /client/.pnp
 /client/.pnp.js
 
+# Don't add db's
+/api/db/*.db
+
 # testing
 /client/coverage
+/api/coverage
 
 # production
 /client/build
+/api/build
 
 # misc
 /client/.DS_Store
@@ -19,5 +25,6 @@
 /client/.env.production.local
 
 /client/npm-debug.log*
+/api/npm-debug.log*
 /client/yarn-debug.log*
 /client/yarn-error.log*
